@@ -5,4 +5,15 @@ page-home {
     ion-item {
         height: 100%;
     }
+    .logo {
+        padding: 5px 0 0 0;
+        width: 85%;
+    }
+    .purple {
+        background-color: #4520ab;
+    }
+    .purple.activated {
+        background-color: #4520ab;
+        opacity: 0.85;
+    }
 }
