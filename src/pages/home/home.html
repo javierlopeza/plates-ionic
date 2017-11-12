@@ -8,22 +8,25 @@
 
 <ion-content>
 
-<ion-list>
-  <ion-item-sliding *ngFor="let plate of plates">
-    <ion-item>
-      <h2>{{plate}}</h2>
-    </ion-item>
-    <ion-item-options side="right">
-      <button ion-button color="danger" (click)="deletePlate(plate)">
-        <ion-icon name="trash"></ion-icon>
-        Remove
-      </button>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
+  <ion-list>
+    <ion-item-sliding *ngFor="let plate of plates">
+      <ion-item>
+        <!-- <h2>{{plate[0]}}</h2> -->
+        <img src="data:image/png;base64,{{plate[1]}}" class="plate-img"/>    
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="deletePlate(plate[0])">
+          <ion-icon name="trash"></ion-icon>
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 
-<ion-fab right bottom>
-  <button ion-fab (click)="presentPrompt()" class="purple"><ion-icon name="add"></ion-icon></button>
-</ion-fab>
+  <ion-fab right bottom>
+    <button ion-fab (click)="presentPrompt()" class="purple">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
 
 </ion-content>

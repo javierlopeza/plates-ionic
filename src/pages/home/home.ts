@@ -17,8 +17,8 @@ export class HomePage {
 
   // GET all plates
   getPlates() {
-    this.http.get('/api').subscribe(response => {
-      console.log(response);      
+    this.http.get('/api/img').subscribe(response => {
+      console.log(response);
       this.plates = response;
     });
   }
@@ -26,7 +26,7 @@ export class HomePage {
   // DELETE plate
   deletePlate(plate) {
     for (let i = 0; i < this.plates.length; i++) {
-      if (this.plates[i] == plate) {
+      if (this.plates[i][0] == plate) {
         this.plates.splice(i, 1);
         break;
       }
