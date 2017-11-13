@@ -2,9 +2,7 @@
   "name": "plates-ionic",
   "app_id": "",
   "type": "ionic-angular",
-  "integrations": {},
-  "proxies": [{
-    "path": "/api",
-    "proxyUrl": "http://multiproject.pythonanywhere.com"
-  }]
+  "integrations": {
+    "cordova": {}
+  }
 }

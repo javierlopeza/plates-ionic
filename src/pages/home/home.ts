@@ -17,7 +17,7 @@ export class HomePage {
 
   // GET all plates
   getPlates() {
-    this.http.get('/api/img').subscribe(response => {
+    this.http.get('http://multiproject.pythonanywhere.com/img').subscribe(response => {
       console.log(response);
       this.plates = response;
     });
@@ -31,7 +31,7 @@ export class HomePage {
         break;
       }
     }
-    this.http.get(`/api/del/${plate}`).subscribe(response => {
+    this.http.get(`http://multiproject.pythonanywhere.com/del/${plate}`).subscribe(response => {
       console.log(response);
       this.getPlates();
     });
@@ -68,7 +68,7 @@ export class HomePage {
 
   // CREATE plate
   createPlate(plate) {
-    this.http.get(`/api/new/${plate}`).subscribe(response => {
+    this.http.get(`http://multiproject.pythonanywhere.com/new/${plate}`).subscribe(response => {
       console.log(response);
       this.getPlates();
     });
