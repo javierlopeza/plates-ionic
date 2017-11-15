@@ -10,6 +10,7 @@ import { AlertController } from 'ionic-angular/components/alert/alert-controller
 export class HomePage {
 
   plates: any = [];
+  faceDetection = false;
 
   constructor(public navCtrl: NavController, public http: HttpClient, public alertCtrl: AlertController) {
     this.getPlates();
@@ -17,9 +18,10 @@ export class HomePage {
 
   // GET all plates
   getPlates() {
-    this.http.get('http://multiproject.pythonanywhere.com/img').subscribe(response => {
+    this.http.get('http://multiproject.pythonanywhere.com').subscribe(response => {
       console.log(response);
-      this.plates = response;
+      this.plates = response['plates'];
+      this.faceDetection = response['face_detection'];
     });
   }
 
@@ -74,6 +76,14 @@ export class HomePage {
     });
   }
 
+
+  // TOOGLE Face Detection
+  toogleFaceDetection() {
+    this.http.get(`http://multiproject.pythonanywhere.com/face_detection`).subscribe(response => {
+      console.log(response);
+      this.faceDetection = response['face_detection'];
+    });
+  }
 
 
 }
